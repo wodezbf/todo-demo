@@ -26,11 +26,17 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # 设置工作目录
 WORKDIR /var/www/html
 
-# 复制项目文件
-COPY . .
+# 复制 composer 相关文件
+COPY composer.json composer.lock ./
 
 # 安装项目依赖
-RUN composer install
+RUN composer install --no-scripts --no-autoloader
+
+# 复制其他项目文件
+COPY . .
+
+# 生成 autoloader
+RUN composer dump-autoload
 
 # 设置权限
 RUN chown -R www-data:www-data \
