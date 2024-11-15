@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 添加一些基础样式 */
+body {
+  @apply bg-gray-50;
+}
+
+input, textarea {
+  @apply border border-gray-300 rounded;
+}
+
+button {
+  @apply transition-colors duration-200;
+} 
