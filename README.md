@@ -24,5 +24,26 @@
 - PHP 8.2
 
 ## 开发环境设置
+1. 克隆仓库
 
-1. 克隆仓库：
+    ```
+    git clone https://github.com/wodezbf/todo-demo.git
+    ```
+
+2. 进入项目目录
+
+    ```
+    cd todo-demo
+    ```
+
+3. 启动 Docker 容器
+
+    ```
+    docker-compose up --build
+    ```
+
+4. 访问应用
+
+    ```
+    http://localhost:3000
+    ```
